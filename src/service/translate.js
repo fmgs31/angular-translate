@@ -1419,7 +1419,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
         if (fallbackLanguageIndex < $fallbackLanguage.length) {
           var langKey = $fallbackLanguage[fallbackLanguageIndex];
           result = getFallbackTranslationInstant(langKey, translationId, interpolateParams, Interpolator);
-          if (!result) {
+          if (result === undefined) {
             result = resolveForFallbackLanguageInstant(fallbackLanguageIndex + 1, translationId, interpolateParams, Interpolator);
           }
         }
